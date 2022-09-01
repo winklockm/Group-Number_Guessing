@@ -3,6 +3,12 @@ const bodyParser = require('body-parser')
 const app = express();
 const PORT = 5000;
 
+let guessTable = {
+  round: 1,
+  guess: [1],
+  message: ['low']
+}
+
 // This must be added before GET & POST routes.
 app.use(bodyParser.urlencoded({extended:true}))
 
@@ -11,7 +17,11 @@ app.use(express.static('server/public'));
 
 // GET & POST Routes go here
 app.post('/guess', (req, res) => {
-  console.log(req.body);
+  res.sendStatus(201)
+})
+
+app.get('/guess', (req, res) => {
+  res.send(guessTable)
 })
 
 
