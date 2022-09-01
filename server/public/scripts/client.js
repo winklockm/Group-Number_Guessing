@@ -7,13 +7,12 @@ function handleReady() {
 
 function grabInputs() {
   let player1Guess = $('#player1Input').val();
-  let guessArr = [player1Guess];
   $.ajax({
     type: 'POST',
     url: '/guess',
-    data: [player1Guess]
+    data: {player1Guess}
   }).then(function(response) {
-    //function here to call get route
+    renderGuesses();
   })
 }
 

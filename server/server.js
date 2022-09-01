@@ -10,6 +10,10 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static('server/public'));
 
 // GET & POST Routes go here
+app.post('/guess', (req, res) => {
+  console.log(req.body);
+})
+
 
 
 app.listen(PORT, () => {
