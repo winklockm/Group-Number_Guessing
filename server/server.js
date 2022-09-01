@@ -53,6 +53,14 @@ app.get('/guess', (req, res) => {
   res.send(guessTable)
 })
 
+app.post('/newGame', (req, res) => {
+  guessTable.guess = [];
+  guessTable.message = [];
+  guessTable.round = 0;
+  getRandomInt()
+  res.sendStatus(200)
+})
+
 
 
 app.listen(PORT, () => {

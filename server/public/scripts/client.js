@@ -3,6 +3,7 @@ $(document).ready(handleReady);
 function handleReady() {
   console.log("jquery is loaded!")
   $('#play-btn').on('click', grabInputs)
+  $('#reset-btn').on('click', newGame)
 }
 
 function grabInputs() {
@@ -35,6 +36,17 @@ function renderGuesses() {
         <td>${guessTable.guess[3]} | ${guessTable.message[3]}</td>
       </tr>
         `)
+      $('#tallyNum').empty().append(`${guessTable.round + 1}`)
+  })
+}
+
+function newGame() {
+  $.ajax({
+    type: 'POST',
+    url: '/newGame'
+  }).then(function(response) {
+    $('#tableBody').empty();
+    $('#tallyNum').empty().append(1)
   })
 }
 
