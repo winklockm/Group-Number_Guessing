@@ -28,7 +28,9 @@ function renderGuesses() {
     url: '/guess'
   }).then(function(guessTable){
     if (guessTable.message.includes('WINNER')) {
+      
       $('#reset-btn').show()
+      $('#play-btn').prop('disabled', true)
     }
     $('#tableBody').append(`
       <tr>
@@ -44,6 +46,7 @@ function renderGuesses() {
 }
 
 function newGame() {
+  $('#play-btn').prop('disabled', false)
   $('#reset-btn').hide()
   $.ajax({
     type: 'POST',
