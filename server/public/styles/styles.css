@@ -1,43 +1,49 @@
 
+input {
+  border-radius: 2rem;
+  background-color: darkorange;
+  font-size: 2rem;
+  color: #333;
+}
 
 #table-container {
     display: flex;
     align-items: left;
     align-content:space-between;
-    border: 1rem solid lightcoral;
+    border: 1rem solid darkslateblue;
     border-radius: 1rem;
   }
 
   table {
     border-collapse: collapse;
-    border: 1px solid lightcoral;
+    border: 1px solid darkslateblue;
     text-align: center;
-	vertical-align: middle;
-    width: 80%;
+	  vertical-align: middle;
+    width: 100%;
     font-size: 2rem;
     color: lightseagreen;
     min-height: 10rem;
-    border-right: 1rem solid lightcoral;
+    border-right: 1rem solid darkslateblue;
   }
 
   caption {
     font-weight: bold;
-    font-size: 24px;
-    text-align: left;
+    font-size: 2.5rem;
+    text-align: center;
     color: #333;
     padding: .3rem;
     margin-bottom: 2rem;
-    border-bottom: 1rem solid lightcoral;
+    border-bottom: 1rem solid darkslateblue;
     width: 100%;
-    color: darkorchid
+    color: darkviolet
   }
 
   thead {
-    background-color: lightcoral;
+    background-color: darkslateblue;
     color: white;
-    font-size: 0.875rem;
-	text-transform: uppercase;
-	letter-spacing: 2%;
+    font-size: 1.75rem;
+	  text-transform: uppercase;
+	  letter-spacing: 2%;
   }
 
   /* if border set in table it is outside, in th, td it is all cells */
@@ -51,7 +57,7 @@
   }
 /* highlight cell for emphasis */
   .cell-highlight {
-    background-color: lightgreen;
+    background-color: darkseagreen;
     font-weight: bold;
   }
 
@@ -61,4 +67,10 @@
   
   tbody tr:nth-child(even) {
     background-color: #eee;
+  }
+
+  button {
+    border-radius: 2rem;
+    height: 2rem;
+    width: 3.5rem;
   }

@@ -34,7 +34,7 @@ function renderGuesses() {
     }
     $('#tableBody').append(`
       <tr>
-        <td>${guessTable.round}</td>
+        <td class="cell-hightlight">${guessTable.round}</td>
         <td>${guessTable.guess[0]} | ${guessTable.message[0]}</td>
         <td>${guessTable.guess[1]} | ${guessTable.message[1]}</td>
         <td>${guessTable.guess[2]} | ${guessTable.message[2]}</td>
