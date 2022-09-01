@@ -7,10 +7,11 @@ function handleReady() {
 
 function grabInputs() {
   let player1Guess = $('#player1Input').val();
+  let player2Guess = 3
   $.ajax({
     type: 'POST',
     url: '/guess',
-    data: {player1Guess}
+    data: {player1Guess, player2Guess}
   }).then(function(response) {
     renderGuesses();
   })
