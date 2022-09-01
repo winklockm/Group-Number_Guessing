@@ -27,6 +27,9 @@ function renderGuesses() {
     type: 'GET',
     url: '/guess'
   }).then(function(guessTable){
+    if (guessTable.message.includes('WINNER')) {
+      $('#reset-btn').show()
+    }
     $('#tableBody').append(`
       <tr>
         <td>${guessTable.round}</td>
@@ -41,6 +44,7 @@ function renderGuesses() {
 }
 
 function newGame() {
+  $('#reset-btn').hide()
   $.ajax({
     type: 'POST',
     url: '/newGame'
