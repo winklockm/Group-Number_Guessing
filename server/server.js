@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser')
 const app = express();
 const PORT = 5000;
+const randomNumFunction = require('./modules/rngGen')
 
 let guessTable = {
   round: 0,
@@ -9,9 +10,7 @@ let guessTable = {
   message: []
 }
 
-function getRandomInt() {
-  return Math.floor(Math.random() * 25)
-} 
+
 
 let randomNum;
 
@@ -24,7 +23,7 @@ app.use(express.static('server/public'));
 // GET & POST Routes go here
 app.post('/guess', (req, res) => {
   if (!randomNum) {
-    randomNum = getRandomInt()
+    randomNum = randomNumFunction()
     console.log(`randomNum in POST ${randomNum}`)
   };
   guessTable.guess = [];
@@ -57,7 +56,7 @@ app.post('/newGame', (req, res) => {
   guessTable.guess = [];
   guessTable.message = [];
   guessTable.round = 0;
-  getRandomInt()
+  randomNumFunction()
   res.sendStatus(200)
 })
 
