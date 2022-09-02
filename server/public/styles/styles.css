@@ -1,4 +1,6 @@
-
+body {
+  background-image: url('https://img.freepik.com/premium-vector/black-checker-chess-square-background_350503-56.jpg?w=2000');
+}
 input {
   border-radius: 2rem;
   background-color: darkorange;
@@ -12,6 +14,7 @@ input {
     align-content:space-between;
     border: 1rem solid darkslateblue;
     border-radius: 1rem;
+    background-color: white;
   }
 
   table {
@@ -21,9 +24,10 @@ input {
 	  vertical-align: middle;
     width: 100%;
     font-size: 2rem;
-    color: lightseagreen;
+    color:crimson ;
     min-height: 10rem;
     border-right: 1rem solid darkslateblue;
+    background-color: white;
   }
 
   caption {
@@ -35,7 +39,8 @@ input {
     margin-bottom: 2rem;
     border-bottom: 1rem solid darkslateblue;
     width: 100%;
-    color: darkviolet
+    color: darkviolet;
+    background-color: white;
   }
 
   thead {
@@ -71,6 +76,17 @@ input {
 
   button {
     border-radius: 2rem;
-    height: 2rem;
-    width: 3.5rem;
+    height: 3rem;
+    width: 5.5rem;
+    font-size: 2rem;
+    margin: .5rem;
+    background-color: chartreuse;
   }
+
+ header {
+  background-color: white;
+  width: fit-content;
+  border-radius: 2rem;
+  padding: 2px;
+  margin: 1.5rem
+ }

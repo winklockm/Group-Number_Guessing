@@ -27,7 +27,8 @@ function renderGuesses() {
     type: 'GET',
     url: '/guess'
   }).then(function(guessTable){
-    if (guessTable.message.includes('WINNER')) {
+    if (guessTable.message.includes('🏆 WINNER!!!! 🏆')) {
+      setTimeout("alert('🎆 We have a WINNER! 🎆')", 1)
       
       $('#reset-btn').show()
       $('#play-btn').prop('disabled', true)

@@ -12,7 +12,7 @@ let guessTable = {
 
 
 
-let randomNum;
+let randomNum = randomNumFunction()
 
 // This must be added before GET & POST routes.
 app.use(bodyParser.urlencoded({extended:true}))
@@ -22,14 +22,11 @@ app.use(express.static('server/public'));
 
 // GET & POST Routes go here
 app.post('/guess', (req, res) => {
-  if (!randomNum) {
-    randomNum = randomNumFunction()
-    console.log(`randomNum in POST ${randomNum}`)
-  };
   guessTable.guess = [];
   guessTable.message = [];
   guessTable.round++;
   console.log('req.body', req.body);
+  console.log(`randomNum in POST ${randomNum}`)
   for (let [player, number] of Object.entries(req.body)) {
     guessTable.guess.push(number);
     if (number > randomNum) {
@@ -37,7 +34,7 @@ app.post('/guess', (req, res) => {
     } else if (number < randomNum) {
       guessTable.message.push('Too Low! 😳');
     } else if (Number(number) === randomNum) {
-      guessTable.message.push('WINNER')
+      guessTable.message.push('🏆 WINNER!!!! 🏆')
       console.log('Winner')
     }
   }
@@ -56,7 +53,7 @@ app.post('/newGame', (req, res) => {
   guessTable.guess = [];
   guessTable.message = [];
   guessTable.round = 0;
-  randomNumFunction()
+  randomNum = randomNumFunction()
   res.sendStatus(200)
 })
 
